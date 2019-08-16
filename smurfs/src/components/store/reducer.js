@@ -11,7 +11,8 @@ import {
 const initialState = {
   smurfs: [],
   err: "",
-  isFetching: false
+  isFetching: false,
+  removed: false
 };
 
 export const reducer = (state = initialState, action) => {
@@ -21,48 +22,55 @@ export const reducer = (state = initialState, action) => {
         ...state,
         err: "",
         isFetching: true,
-        smurfs: []
+        smurfs: [],
+        removed: false
       };
     case FETCH_SUCCESS:
       return {
         ...state,
         err: "",
         isFetching: false,
-        smurfs: action.payload
+        smurfs: action.payload,
+        removed: false
       };
     case FETCH_FAIL:
       return {
         ...state,
         err: action.payload,
         isFetching: false,
-        smurfs: []
+        smurfs: [],
+        removed: false
       };
     case ADD_START:
       return {
         ...state,
         err: "",
         isFetching: true,
-        smurfs: []
+        smurfs: [],
+        removed: false
       };
     case ADD_SUCCESS:
       return {
         ...state,
         err: "",
         isFetching: false,
-        smurfs: action.payload
+        smurfs: action.payload,
+        removed: false
       };
     case ADD_FAIL:
       return {
         ...state,
         err: action.payload,
         isFetching: false,
-        smurfs: []
+        smurfs: [],
+        removed: false
       };
-    case REMOVE_SMURF:
-        return{
-        ...state.filter((data, i) => i !== action.id)
-        }
-
+    //   case REMOVE_SMURF:
+    //       return{
+    //           ...state,
+    //           smurfs: state.filter(smurf => smurf.id !== action.id),
+    //           removed: true
+    //       }
     default:
       return state;
   }

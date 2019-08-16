@@ -41,11 +41,12 @@ export const addSmurf = state => dispatch =>{
 export const REMOVE_SMURF = 'REMOVE_SMURF'
 
 export const removeSmurf = id =>{
-    return{
-        type: REMOVE_SMURF,
-        id: id
-    }
-}
- 
+    axios
+    .delete(`http://localhost:3333/smurfs/${id}`)
+    .then((res)=> alert('Deleted', res))
+    .catch(function(error) {
+      console.log(error);
+    });
+};
 
 

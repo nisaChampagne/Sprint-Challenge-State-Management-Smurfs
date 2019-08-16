@@ -7,7 +7,7 @@ class AddForm extends React.Component {
         name: '',
         age:'',
         height: '',
-        id:''
+        id: new Date()
     }
     changeHandler = e => {
         this.setState({...this.state, [e.target.name]: e.target.value})
@@ -20,7 +20,7 @@ class AddForm extends React.Component {
             name: '',
             age: '',
             height:'',
-            id:''
+            id: ''
         })
     }
     render(){
@@ -45,13 +45,7 @@ class AddForm extends React.Component {
                     name='height'
                     onChange={this.changeHandler}
                     />
-                     <label>Id: </label>
-                    <input type='number'
-                    value={this.state.id}
-                    name='id'
-                    onChange={this.changeHandler}
-                    />
-                    <button className='add' onClick={this.submitHandler}>Add</button>
+                    <button className='add'>Add</button>
                 </form>
             </div>
         )

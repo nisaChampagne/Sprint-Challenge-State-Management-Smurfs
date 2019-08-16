@@ -7,7 +7,7 @@ const SmurfList = () => {
     return(
     <div>
         {state.smurfs.map(smurf => {
-            return <Smurfs smurf={smurf} />
+            return <Smurfs smurf={smurf} key={smurf.id} />
         })}
     </div>
     )
