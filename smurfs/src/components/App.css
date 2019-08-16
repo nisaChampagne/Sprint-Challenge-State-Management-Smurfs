@@ -3,3 +3,91 @@
   margin: 0;
   box-sizing: border-box;
 }
+
+body{
+  background-image:url('https://img.wallpapersafari.com/desktop/1366/768/66/73/64bvSY.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.App{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+h1{
+  margin-bottom: 20px;
+  color: white;
+  text-shadow: 5px 5px 5px rgb(1, 1, 41);
+}
+
+.smurf-form{
+  margin-bottom: 20px;
+}
+
+input, label, .add{
+  display: flex;
+}
+
+
+label{
+  color: white;
+  margin-bottom:10px;
+   margin-top: 10px;
+   font-size: 18px;
+}
+
+input, label, .existing-smurf{
+  display: flex;
+  flex-direction: row;
+}
+
+input{
+  width: 600px;
+  padding: 5px 5px 5px 5px;
+  border-radius: 5px;
+}
+
+.existing-smurf{
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 500px;
+  border-radius: 10px;
+  text-align: center;
+  margin-bottom: 20px;
+  background: white;
+  box-shadow: 5px 5px 5px rgb(2, 2, 87);
+}
+
+h4{
+  margin-bottom: 10px;
+}
+
+.add{
+  margin-bottom: 10px;
+  margin-top: 10px;
+  border: none;
+  outline:none;
+  border-radius: 5px;
+  padding: 8px 8px 8px 8px;
+  background: blue;
+  color: white;
+  margin: auto;
+  max-width: 200px;
+  font-size: 18px;
+}
+
+.delete{
+  border: none;
+  outline:none;
+  border-radius: 5px;
+  padding: 8px 8px 8px 8px;
+  background: blue;
+  color: white;
+  margin: auto;
+  max-width: 200px;
+  margin-bottom: 15px;
+  font-size: 18px;
+}

@@ -1,11 +1,14 @@
 import React from 'react'
+import Smurfs from './Smurfs'
 import { useSelector } from 'react-redux'
 
 const SmurfList = () => {
     const state = useSelector(state => state)
     return(
     <div>
-        <h1>{state.test}</h1>
+        {state.smurfs.map(smurf => {
+            return <Smurfs smurf={smurf} />
+        })}
     </div>
     )
 }
