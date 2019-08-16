@@ -2,7 +2,7 @@ Self-Study/Essay Questions
 
  {/*What problem does the context API help solve?*/}
 
-It solves the problem of prop drilling which is amazing to learn about.
+It solves the problem of prop drilling which was/is amazing to learn about.
 
 {/*In your own words, describe actions, reducers and the store and their role in Redux. What does each piece do? Why is the store known as a 'single source of truth' in a redux application?*/}
 
@@ -40,6 +40,8 @@ export const getSmurfs = () => dispatch =>{
 }
 
  {/*What is your favorite state management system you've learned and this sprint? Please explain why!*/}
+
+
 As much as I have a love/hate relationship with redux, it is my favorite since it challenges me.
 Its nice to not have to prop drill as well as deal with context API. I personally like having my state
 in the store to use whenever necessary by connecting components or using react-redux hooks like { useSelector }.

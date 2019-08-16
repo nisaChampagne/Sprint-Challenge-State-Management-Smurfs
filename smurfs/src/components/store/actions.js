@@ -38,15 +38,18 @@ export const addSmurf = state => dispatch =>{
         })
 }
 
-export const REMOVE_SMURF = 'REMOVE_SMURF'
-
-export const removeSmurf = id =>{
+export const removeSmurf = id => dispatch =>{
     axios
     .delete(`http://localhost:3333/smurfs/${id}`)
     .then((res)=> alert('Deleted', res))
+    .then(res => {
+        dispatch({ type: FETCH_SUCCESS, payload: res.data })
+    })
     .catch(function(error) {
+        dispatch({ type: FETCH_FAIL, payload: error.response.statusText})
       console.log(error);
     });
+    window.location.href = window.location.href;
 };
 
 

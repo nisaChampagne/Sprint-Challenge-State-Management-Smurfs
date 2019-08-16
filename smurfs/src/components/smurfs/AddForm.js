@@ -3,11 +3,10 @@ import { addSmurf } from '../store/actions'
 import { connect } from 'react-redux'
 
 class AddForm extends React.Component {
-    state ={
+    state = {
         name: '',
         age:'',
         height: '',
-        id: new Date()
     }
     changeHandler = e => {
         this.setState({...this.state, [e.target.name]: e.target.value})
@@ -20,7 +19,6 @@ class AddForm extends React.Component {
             name: '',
             age: '',
             height:'',
-            id: ''
         })
     }
     render(){
