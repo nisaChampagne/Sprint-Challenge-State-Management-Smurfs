@@ -1,0 +1,48 @@
+Self-Study/Essay Questions
+
+ {/*What problem does the context API help solve?*/}
+
+It solves the problem of prop drilling which was/is amazing to learn about.
+
+{/*In your own words, describe actions, reducers and the store and their role in Redux. What does each piece do? Why is the store known as a 'single source of truth' in a redux application?*/}
+
+Actions are payloads of info that act as a middle man between the store and our app as far as sending data goes.
+Reducers handle how the apps original state will change in response to the actions brought into the store.
+The Store brings actions and reducers together to manage state and state changes.
+
+
+ {/*What is the difference between Application state and Component state? When would be a good time to use one over the other?*/}
+ 
+
+ Application State is global whereas Component State is local. Redux uses stores to hold application state so any component in the app can access it along as they are connected into it.
+ Component state lives within the specific components. It is only updated within  that component and passed to its children via props.
+ Depending on your project size would determine when to use application or component state. 
+ large project- application state
+ small project - component state
+ 
+ 
+ {/*Describe redux-thunk, what does it allow us to do? How does it change our action-creators?*/}
+
+Redux-thunk is middleware that gives redux the ability to run asychronous operations with external APIs to save or retrieve data. Thunk makes it easier to dispatch actions that follow the lifecycle of API requests from start to finish
+i.e
+export const getSmurfs = () => dispatch =>{
+    dispatch({ type: FETCH_START }) <----
+    axios  
+        .get('https://localhost:3333/smurfs')
+        .then(res => {
+            dispatch({ type: FETCH_START, payload: res.data})<---
+            console.log('GET REQ', res.data)
+        })
+        .catch(err => {
+            dispatch({ type: FETCH_FAIL, payload: 'ERROR'})<---
+            console.log(err)
+        })
+}
+
+ {/*What is your favorite state management system you've learned and this sprint? Please explain why!*/}
+
+
+As much as I have a love/hate relationship with redux, it is my favorite since it challenges me.
+Its nice to not have to prop drill as well as deal with context API. I personally like having my state
+in the store to use whenever necessary by connecting components or using react-redux hooks like { useSelector }.
+ 
